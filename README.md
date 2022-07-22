@@ -31,12 +31,12 @@ docker-compose up -d
 - You should see the Traefik's Dashboard
 
 ## Routing
-As you might see on the docker-compose file, we have configured Traefik with **rules** to route request with host:first.localhost to the app1.
+As you might see on the docker-compose file, we have configured Traefik with **rules** to route request with host:first.localhost to the service1.
 We can check it with a simple curl command
 ```
 curl -H Host:first.localhost http://127.0.0.1
 ```
-And now you can see that the *Hostname* is your app1 container id.
+And now you can see that the *Hostname* is your service1 container id.
 You obviously can do the same with the other app
 ```
 curl -H Host:second.localhost http://127.0.0.1
