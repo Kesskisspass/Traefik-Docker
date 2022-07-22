@@ -7,8 +7,8 @@ For this example, we will build a very simple app composed by two containers (im
 In front of these two containers, we'll add another container (You guess it... **Traefik**) as a _reverse-proxy_.\
 We'll see how Traefik will help us to manage the **load balancing** dynamically (between two or more instances of a service) and how to use it to **route our requests** from a domain  to a specific service.  
 > ex:  \
-> first.localhost -> app1\
-> second.localhost -> app2
+> first.localhost -> service1\
+> second.localhost -> service2
 
 ## Requirements
 - Docker is needed (Docker-compose too)
@@ -45,7 +45,7 @@ curl -H Host:second.localhost http://127.0.0.1
 ## Load balancing
 Now we will add some instances to our services app1 & app2
 ```
-docker-compose up -d --scale app1=2 --scale app2=2
+docker-compose up -d --scale service1=2 --scale service2=2
 ```
 Ok so with a ```docker ps``` you should see 4 containous/whoami containers running.
 Let's relaunch our curl command:
