@@ -43,7 +43,7 @@ curl -H Host:second.localhost http://127.0.0.1
 ```
 
 ## Load balancing
-Now we will add some instances to our services app1 & app2
+Now we will add some instances to our service1 & service2
 ```
 docker-compose up -d --scale service1=2 --scale service2=2
 ```
